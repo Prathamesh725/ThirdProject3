@@ -12,7 +12,29 @@ public class onlineExamination
 	private int questionCount;
 	private int[] userAnswer;
 	private int[] correctAnswer;
-	
+	String[] questions=new String[] {"Python is a ______ ?",
+			"Linux is _____ ?",
+			"AIX is the operating system of which company ?",
+			 "'Nibble' in computer terminology is also called ________ ?",
+			 "Third generation computers used: ?",
+			 "Trackball is which of the following devices ?",
+			 "Which of the following is an input device of a computer ?",
+			"What is the full form of PROM ?",
+			 "_______ is the smallest unit of data in a computer ?",
+			"Which of the following is NOT an anti-virus software ?",
+			};
+    String[][] options = {
+            {"high level language ", "assembly language", "low level language", "machine language"},
+            {"an interpreter", "an operating system", "an assembly language", "a high level language"},
+            {"Apple", "Unisys", "IBM", "Microsoft"},
+            {"Bit ", "Half bit", "Half Byte", "Byte"},
+            {"vacuum tubes", "integrated circuits", "Transistor", "VLSI technique"},
+            {"Input Device", "Touchpad", "output device", "Barcode reader"},
+            {"Speaker ", "Printer", "Scanner", "Monitor"},
+            {"Program", "Primary", "Programmable"},
+            {"Giga bYte", "Bit", "Byte"},
+            {"Linux", "norton", "Avast"}
+    };
 	public static void main(String[] args) 
 	{
 		Scanner sc=new Scanner(System.in);
@@ -75,14 +97,16 @@ public class onlineExamination
 		System.out.println("You have " + timeRemaining + " minutes to complete the exam.");
 		for (int i = 0; i < questionCount; i++) 
 		{
-			System.out.println("Question " + (i + 1) + ":");
-			System.out.println("1. Option 1");
-			System.out.println("2. Option 2");
-			System.out.print("Your answer (1 or 2): ");
+			System.out.println("Question"+ (i+1)+":" +questions[i]);
+			for(int j=0;j<options[i].length;j++)
+			{
+				System.out.println(j+1+". "+options[i][j]);
+			}
+			System.out.println("Your answer (1 or 2 or 3 or 4):");
 			int answer = scanner.nextInt();
-			userAnswer[i] = answer;
+			userAnswer[i]= answer;
+
 		}
-		
 		
 		System.out.println("Would you like to submit? \n1:Yes \n2:NO");
 		int n = scanner.nextInt();
